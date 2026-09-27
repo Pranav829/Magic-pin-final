@@ -24,9 +24,9 @@ from pydantic import BaseModel
 
 load_dotenv()
 
-from context_store import ContextStore
-from conversation_tracker import ConversationTracker
-from composer import compose_message, compose_reply, detect_intent_signals, MODEL, PROVIDER
+from .context_store import ContextStore
+from .conversation_tracker import ConversationTracker
+from .composer import compose_message, compose_reply, detect_intent_signals, MODEL, PROVIDER
 
 logging.basicConfig(
     level=logging.INFO,
