@@ -15,9 +15,9 @@ limit does not extend the judge's deadline.
 
 1. Upload the clean source files to a GitHub repository, preserving folders.
 2. In Vercel, choose Add New Project and import that repository.
-3. Set Root Directory to `bot`.
+3. Set Root Directory to the repository root (`./`), not `bot`.
 4. Use the FastAPI framework preset. Keep build and output overrides unset.
-5. The `index.py` entry point exports the app, `.python-version` selects Python
+5. The root `index.py` entry point exports `bot.main:app`, `.python-version` selects Python
    3.12, and `requirements.txt` supplies the dependencies.
 6. Add environment variables for the production deployment:
    - `LLM_PROVIDER=gemini`

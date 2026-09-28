@@ -20,9 +20,8 @@ os.environ['LLM_PROVIDER'] = 'gemini'
 os.environ.setdefault('GEMINI_MODEL', 'gemini-3.1-flash-lite')
 
 if args.command == 'bot':
-    sys.path.insert(0, str(ROOT / 'bot'))
     import uvicorn
-    uvicorn.run('bot:app', host='127.0.0.1', port=int(os.getenv('LOCAL_PORT', '8081')))
+    uvicorn.run('bot.main:app', host='127.0.0.1', port=int(os.getenv('LOCAL_PORT', '8081')))
 else:
     import judge_simulator as j
     j.BOT_URL = 'http://127.0.0.1:' + os.getenv('LOCAL_PORT', '8081')

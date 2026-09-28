@@ -8,7 +8,7 @@ FastAPI server exposing 5 endpoints for the judge harness:
   GET  /v1/healthz   — liveness probe
   GET  /v1/metadata  — bot identity
 
-Run:  uvicorn bot:app --host 0.0.0.0 --port 8080
+Run from repository root: uvicorn bot.main:app --host 127.0.0.1 --port 8081
 """
 
 import logging
@@ -356,4 +356,4 @@ async def on_startup():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("bot:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run(app, host="127.0.0.1", port=int(os.getenv("LOCAL_PORT", "8081")))

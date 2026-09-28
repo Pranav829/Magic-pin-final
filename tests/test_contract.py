@@ -4,11 +4,11 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'bot'))
-import bot as server
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from bot import main as server
 from fastapi.testclient import TestClient
-from context_store import ContextStore
-from conversation_tracker import ConversationTracker
+from bot.context_store import ContextStore
+from bot.conversation_tracker import ConversationTracker
 
 
 class ContractTests(unittest.TestCase):
